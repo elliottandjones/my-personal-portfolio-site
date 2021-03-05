@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div id="about" className="about">
       <h1 className="greeting">
-        <span className="greeting1"> Greetings! </span> <span className="greeting2"> I'm Elliott Jones. </span>
+        <span className="greeting1"> Greetings! </span> <span className="greeting2"> I'm Elliott A. Jones! </span>
       </h1>
       <section className="aboutme typing">
         <p>I'm a Front-End Web Developer.</p>

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer id="footer" className="footer" style={styles}>
-      <p>website created by Elliott Jones</p>
+      <p>Copyright &copy; 2021</p>
     </footer>
   );
 }
