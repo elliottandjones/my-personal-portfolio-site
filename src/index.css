@@ -17,34 +17,109 @@ body {
 }
 .home {
   box-sizing: border-box;
-  font-family: 'Roboto', Tahoma, Geneva, Verdana, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-family: "Roboto", Tahoma, Geneva, Verdana, -apple-system,
+    BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "about"
     "project-list"
     "contact"
-    "footer"
-  ;
+    "footer";
   gap: 10px;
   min-height: 100vh;
   min-width: 100%;
   overflow-x: auto;
-  background: 
-    linear-gradient(233deg, rgba(234, 234, 234, 0.03) 0%, rgba(234, 234, 234, 0.03) 33.3%,rgba(69, 69, 69, 0.03) 33.3%, rgba(69, 69, 69, 0.03) 66.6%,rgba(189, 189, 189, 0.03) 66.6%, rgba(189, 189, 189, 0.03) 99.889%),
-    linear-gradient(63deg, rgba(247, 247, 247, 0.03) 0%, rgba(247, 247, 247, 0.03) 38.3%,rgba(93, 93, 93, 0.03) 38.3%, rgba(93, 93, 93, 0.03) 99%),
-    linear-gradient(111deg,rgba(93, 93, 93, 0.05) 65%,rgba(208, 208, 208, 0.05) 65%, rgba(208, 208, 208, 0.05) 99%),
-    linear-gradient(23deg, rgba(3, 3, 3, 0.06) 0%, rgba(3, 3, 3, 0.06) 33.3%,rgba(156, 156, 156, 0.06) 33.3%, rgba(156, 156, 156, 0.06) 66.6%,rgba(199, 199, 199, 0.06) 66.6%, rgba(199, 199, 199, 0.06) 99.889%),
-    linear-gradient(301deg, rgba(82, 82, 82, 0.06) 0%, rgba(82, 82, 82, 0.06) 33.3%,rgba(179, 179, 179, 0.06) 33.3%, rgba(179, 179, 179, 0.06) 63%,rgba(212, 212, 212, 0.06) 63%, rgba(212, 212, 212, 0.06) 99.889%),
-    linear-gradient(311deg, rgba(82, 82, 82, 0.03) 0%, rgba(82, 82, 82, 0.03) 33.3%,rgba(179, 179, 179, 0.03) 33.3%, rgba(179, 179, 179, 0.03) 66.6%,rgba(212, 212, 212, 0.03) 66.6%, rgba(212, 212, 212, 0.03) 99.889%),
-    linear-gradient(32deg, rgba(70, 70, 70, 0.02) 0%, rgba(70, 70, 70, 0.02) 33.3%,rgba(166, 166, 166, 0.02) 33.3%, rgba(166, 166, 166, 0.02) 66.6%,rgba(53, 53, 53, 0.02) 66.6%, rgba(53, 53, 53, 0.02) 99.889%),
-    linear-gradient(38deg, rgba(129, 129, 129, 0.07) 0%, rgba(129, 129, 129, 0.07) 33.3%,rgba(38, 38, 38, 0.07) 33.3%, rgba(38, 38, 38, 0.07) 66.6%,rgba(153, 153, 153, 0.07) 66.6%, rgba(153, 153, 153, 0.07) 99.889%),
-    linear-gradient(63deg, rgba(51, 51, 51, 0.02) 0%, rgba(51, 51, 51, 0.02) 33.3%,rgba(12, 12, 12, 0.02) 33.3%, rgba(12, 12, 12, 0.02) 66.6%,rgba(158, 158, 158, 0.02) 66.6%, rgba(158, 158, 158, 0.02) 99.889%),
-    linear-gradient(227deg, rgba(63, 63, 63, 0.03) 0%, rgba(63, 63, 63, 0.03) 33.3%,rgba(9, 9, 9, 0.03) 33.3%, rgba(9, 9, 9, 0.03) 66.6%,rgba(85, 85, 85, 0.03) 66.6%, rgba(85, 85, 85, 0.03) 99.889%),
-    linear-gradient(0deg, var(--themedark),var(--dimslate));
-    /* linear-gradient(103deg, rgba(247, 247, 247, 0.04) 0%, rgba(247, 247, 247, 0.04) 33.3%,rgba(93, 93, 93, 0.04) 33.3%, rgba(93, 93, 93, 0.04) 66.6%,rgba(208, 208, 208, 0.04) 66.6%, rgba(208, 208, 208, 0.04) 99%), */
+  background: linear-gradient(
+      233deg,
+      rgba(234, 234, 234, 0.03) 0%,
+      rgba(234, 234, 234, 0.03) 33.3%,
+      rgba(69, 69, 69, 0.03) 33.3%,
+      rgba(69, 69, 69, 0.03) 66.6%,
+      rgba(189, 189, 189, 0.03) 66.6%,
+      rgba(189, 189, 189, 0.03) 99.889%
+    ),
+    linear-gradient(
+      63deg,
+      rgba(247, 247, 247, 0.03) 0%,
+      rgba(247, 247, 247, 0.03) 38.3%,
+      rgba(93, 93, 93, 0.03) 38.3%,
+      rgba(93, 93, 93, 0.03) 99%
+    ),
+    linear-gradient(
+      111deg,
+      rgba(93, 93, 93, 0.05) 65%,
+      rgba(208, 208, 208, 0.05) 65%,
+      rgba(208, 208, 208, 0.05) 99%
+    ),
+    linear-gradient(
+      23deg,
+      rgba(3, 3, 3, 0.06) 0%,
+      rgba(3, 3, 3, 0.06) 33.3%,
+      rgba(156, 156, 156, 0.06) 33.3%,
+      rgba(156, 156, 156, 0.06) 66.6%,
+      rgba(199, 199, 199, 0.06) 66.6%,
+      rgba(199, 199, 199, 0.06) 99.889%
+    ),
+    linear-gradient(
+      301deg,
+      rgba(82, 82, 82, 0.06) 0%,
+      rgba(82, 82, 82, 0.06) 33.3%,
+      rgba(179, 179, 179, 0.06) 33.3%,
+      rgba(179, 179, 179, 0.06) 63%,
+      rgba(212, 212, 212, 0.06) 63%,
+      rgba(212, 212, 212, 0.06) 99.889%
+    ),
+    linear-gradient(
+      311deg,
+      rgba(82, 82, 82, 0.03) 0%,
+      rgba(82, 82, 82, 0.03) 33.3%,
+      rgba(179, 179, 179, 0.03) 33.3%,
+      rgba(179, 179, 179, 0.03) 66.6%,
+      rgba(212, 212, 212, 0.03) 66.6%,
+      rgba(212, 212, 212, 0.03) 99.889%
+    ),
+    linear-gradient(
+      32deg,
+      rgba(70, 70, 70, 0.02) 0%,
+      rgba(70, 70, 70, 0.02) 33.3%,
+      rgba(166, 166, 166, 0.02) 33.3%,
+      rgba(166, 166, 166, 0.02) 66.6%,
+      rgba(53, 53, 53, 0.02) 66.6%,
+      rgba(53, 53, 53, 0.02) 99.889%
+    ),
+    linear-gradient(
+      38deg,
+      rgba(129, 129, 129, 0.07) 0%,
+      rgba(129, 129, 129, 0.07) 33.3%,
+      rgba(38, 38, 38, 0.07) 33.3%,
+      rgba(38, 38, 38, 0.07) 66.6%,
+      rgba(153, 153, 153, 0.07) 66.6%,
+      rgba(153, 153, 153, 0.07) 99.889%
+    ),
+    linear-gradient(
+      63deg,
+      rgba(51, 51, 51, 0.02) 0%,
+      rgba(51, 51, 51, 0.02) 33.3%,
+      rgba(12, 12, 12, 0.02) 33.3%,
+      rgba(12, 12, 12, 0.02) 66.6%,
+      rgba(158, 158, 158, 0.02) 66.6%,
+      rgba(158, 158, 158, 0.02) 99.889%
+    ),
+    linear-gradient(
+      227deg,
+      rgba(63, 63, 63, 0.03) 0%,
+      rgba(63, 63, 63, 0.03) 33.3%,
+      rgba(9, 9, 9, 0.03) 33.3%,
+      rgba(9, 9, 9, 0.03) 66.6%,
+      rgba(85, 85, 85, 0.03) 66.6%,
+      rgba(85, 85, 85, 0.03) 99.889%
+    ),
+    linear-gradient(0deg, var(--themedark), var(--dimslate));
+  /* linear-gradient(103deg, rgba(247, 247, 247, 0.04) 0%, rgba(247, 247, 247, 0.04) 33.3%,rgba(93, 93, 93, 0.04) 33.3%, rgba(93, 93, 93, 0.04) 66.6%,rgba(208, 208, 208, 0.04) 66.6%, rgba(208, 208, 208, 0.04) 99%), */
   /* background: linear-gradient(to top, var(--themedark),rgb(47, 89, 105), var(--dimslate), rgb(22, 156, 112),rgb(32, 66, 52), rgb(94, 170, 156)); */
   /* background: linear-gradient(45deg, var(--themedark),rgb(47, 89, 105), var(--dimslate), rgb(22, 156, 112), rgb(94, 170, 156), rgb(32, 66, 52)); */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -56,10 +131,18 @@ body {
   /* background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
   /* background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%); */
 }
-.about{grid-area: about;}
-.project-list{grid-area: project-list;}
-.contact{grid-area: contact;}
-.footer{grid-area: footer;}
+.about {
+  grid-area: about;
+}
+.project-list {
+  grid-area: project-list;
+}
+.contact {
+  grid-area: contact;
+}
+.footer {
+  grid-area: footer;
+}
 /* A grow effect */
 .grow {
   cursor: pointer;

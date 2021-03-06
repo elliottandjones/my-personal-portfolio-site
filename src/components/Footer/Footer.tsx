@@ -6,7 +6,7 @@ export default function Footer() {
   );
 }
 
-const styles:React.CSSProperties = {
+const styles: React.CSSProperties = {
   color: "var(--lightslate)",
   margin: 0,
   fontSize: 12,

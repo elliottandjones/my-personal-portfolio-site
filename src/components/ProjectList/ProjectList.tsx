@@ -9,18 +9,30 @@ export default function ProjectList() {
     <div id="project-list" className="project-list">
       <ul id="projects-list">
         <li className="tetris">
-          <a className="grow" href="https://agitated-hoover-67ed9a.netlify.com" title="It's Tetris. You know--Tetris.">
+          <a
+            className="grow"
+            href="https://agitated-hoover-67ed9a.netlify.com"
+            title="It's Tetris. You know--Tetris."
+          >
             <p>Tetris</p>
           </a>
         </li>
         <li className="conjuring">
-          <a className="grow" href="https://conjuring-2b5a2.firebaseapp.com" title="Conjuring: a D&D 5e reference web app!">
+          <a
+            className="grow"
+            href="https://conjuring-2b5a2.firebaseapp.com"
+            title="Conjuring: a D&D 5e reference web app!"
+          >
             <p>Conjuring</p>
             {/* <p style={{fontSize: "0.6em", textTransform: "none"}}>(a D&D 5e Reference App)</p> */}
           </a>
         </li>
         <li className="space">
-          <a className="grow" href="https://relaxed-bassi-0a0166.netlify.com" title="Cruise around in space.">
+          <a
+            className="grow"
+            href="https://relaxed-bassi-0a0166.netlify.com"
+            title="Cruise around in space."
+          >
             <p>Go to Space</p>
           </a>
         </li>

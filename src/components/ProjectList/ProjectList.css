@@ -6,7 +6,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   list-style: none;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .project-list ul {
     gap: 15px;
   }
@@ -28,18 +28,16 @@
   text-transform: capitalize;
   font-size: 20px;
   border-radius: 2%;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 .project-list a:hover {
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.3),
-  0 0 25px 0 inset rgba(0, 0, 0, 0.25);
-  
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3),
+    0 0 25px 0 inset rgba(0, 0, 0, 0.25);
 }
 
 .project-list li.conjuring a:hover {
-  border-color:orangered;
+  border-color: orangered;
 }
-
 
 /* @media (max-width: 1000px) { */
 .project-list {

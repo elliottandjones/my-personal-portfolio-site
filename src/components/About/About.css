@@ -1,23 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto&display=swap");
 
 #about {
   box-sizing: border-box;
   text-align: center;
   color: var(--lightslate);
-  /* background: var(--slate); */
-  /* background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%); */
-  /* background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%); */
-  /* background: #000046; */
-  /* fallback for old browsers */
-  /* background: -webkit-linear-gradient(to right, #000046, #1CB5E0); */
-  /* Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(to right, #000046, #1CB5E0); */
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* height: calc(75vh - 87px); */
 }
 
 .greeting {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   padding-top: 12vh;
@@ -26,17 +16,16 @@
   grid-template-areas: "greeting1 greeting2";
   justify-content: center;
 }
-span.greeting1 { 
+span.greeting1 {
   margin-right: 8px;
 }
 @media screen and (max-width: 600px) {
   .greeting {
     padding-top: 5vh;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "greeting1"
-      "greeting2"
-    ;
+      "greeting2";
   }
   .description {
     padding-top: 0 !important;
@@ -44,6 +33,7 @@ span.greeting1 {
 }
 
 .description {
+  font-family: "Roboto", sans-serif;
   padding-top: 7vh;
   font-weight: 400;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
