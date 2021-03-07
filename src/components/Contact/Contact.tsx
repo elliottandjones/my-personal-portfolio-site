@@ -1,29 +1,30 @@
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import "./Contact.css";
 
 export default function Contact() {
   return (
-    <div id="contact" className="contact">
+    <section id="contact" className="contact">
       <a
         className="icon email grow"
         href="mailto:elliottohj44@gmail.com"
         title="Email me!"
       >
-        <i className="fas fa-envelope"></i>
+        <FaEnvelope />
       </a>
       <a
         className="icon github grow"
         href="https://github.com/elliottandjones"
         title="Check out my github!"
       >
-        <i className="fab fa-github-square"></i>
+        <FaGithub />
       </a>
       <a
         className="icon linkedin grow"
         href="https://www.linkedin.com/in/elliott-jones-b1115434"
         title="Connect on linkedin!"
       >
-        <i className="fab fa-linkedin"></i>
+        <FaLinkedin />
       </a>
-    </div>
+    </section>
   );
 }

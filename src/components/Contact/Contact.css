@@ -1,32 +1,14 @@
-#contact {
+.contact {
   display: grid;
-  grid-template-areas: "facebook linkedin github codepen email";
-  /* gap: 5px; */
+  grid-template-areas: "linkedin github email";
+  gap: 15px;
   text-align: center;
   justify-content: space-evenly;
   align-items: center;
-  /* background: #d5f7f7; */
-  background: linear-gradient(
-    -225deg,
-    rgba(227, 253, 245, 0.87) 0%,
-    rgba(255, 230, 250, 0.87) 100%
-  );
+  /* margin-top: -20px; */
+  min-height: 54px;
+  background: linear-gradient(-225deg, rgba(227, 253, 245, 0.87) 0%, rgba(255, 230, 250, 0.87) 100%);
   /* background-image: -webkit-linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%); */
-}
-
-@media screen and (max-width: 600px) {
-  #contact {
-    min-height: 48px;
-    justify-content: center;
-    gap: 20px;
-  }
-}
-@media screen and (max-width: 410px) {
-  #contact {
-    min-height: 48px;
-    justify-content: center;
-    gap: 13px;
-  }
 }
 
 a.icon {
@@ -36,7 +18,6 @@ a.icon {
   background-size: contain;
   height: 48px;
   width: 48px;
-  margin-top: -20px;
   /* border: transparent; */
   text-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -46,11 +27,6 @@ a.icon.email {
   font-size: 48px;
   /* color: var(--themeinverse); */
   color: rgba(0, 0, 70, 0.795);
-}
-@media screen and (max-width: 600px) {
-  a.icon.email {
-    color: rgba(0, 0, 70, 0.719);
-  }
 }
 
 .linkedin {
@@ -63,16 +39,4 @@ a.icon.email {
   grid-area: github;
   font-size: 48px;
   color: #333;
-}
-
-.codepen {
-  grid-area: codepen;
-  font-size: 48px;
-  color: #000;
-}
-
-.facebook {
-  grid-area: facebook;
-  font-size: 48px;
-  color: #0976b4;
 }

@@ -12,9 +12,9 @@ export default function ProjectList() {
           <a
             className="grow"
             href="https://agitated-hoover-67ed9a.netlify.com"
-            title="It's Tetris. You know--Tetris."
+            title="It's Tetris."
           >
-            <p>Tetris</p>
+            <h4>Tetris</h4>
           </a>
         </li>
         <li className="conjuring">
@@ -23,7 +23,7 @@ export default function ProjectList() {
             href="https://conjuring-2b5a2.firebaseapp.com"
             title="Conjuring: a D&D 5e reference web app!"
           >
-            <p>Conjuring</p>
+            <h2>Conjuring</h2>
             {/* <p style={{fontSize: "0.6em", textTransform: "none"}}>(a D&D 5e Reference App)</p> */}
           </a>
         </li>
@@ -33,7 +33,7 @@ export default function ProjectList() {
             href="https://relaxed-bassi-0a0166.netlify.com"
             title="Cruise around in space."
           >
-            <p>Go to Space</p>
+            <h4>Go to Space</h4>
           </a>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Montserrat&display=swap");
 
 #about {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 .greeting {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Ubuntu Mono", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   padding-top: 12vh;
@@ -33,7 +33,7 @@ span.greeting1 {
 }
 
 .description {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding-top: 7vh;
   font-weight: 400;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -45,6 +45,9 @@ span.greeting1 {
 .description a {
   text-decoration: none;
   color: var(--lightslate);
+}
+.description a:hover, .description a:focus {
+  text-decoration: underline;
 }
 
 .description p {
