@@ -15,6 +15,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* main {
+  height: 100vh;
+} */
 .home {
   box-sizing: border-box;
   font-family: "Roboto", Tahoma, Geneva, Verdana, -apple-system,

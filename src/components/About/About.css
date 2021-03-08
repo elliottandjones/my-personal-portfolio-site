@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Montserrat&display=swap");
 
 #about {
+  font-size:16px;
   box-sizing: border-box;
   text-align: center;
   color: var(--lightslate);
@@ -34,7 +35,8 @@ span.greeting1 {
 
 .description {
   font-family: "Montserrat", sans-serif;
-  padding-top: 7vh;
+  font-size: 16px;
+  padding-top: 10px;
   font-weight: 400;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -48,8 +50,4 @@ span.greeting1 {
 }
 .description a:hover, .description a:focus {
   text-decoration: underline;
-}
-
-.description p {
-  font-size: 1rem;
 }
