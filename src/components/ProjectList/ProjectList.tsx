@@ -8,9 +8,7 @@ export default function ProjectList() {
   return (
     <div id="project-list" className="project-list">
       <ul id="projects-list">
-        <li className="">
-
-        </li>
+        <li className=""></li>
         <li className="tetris">
           <a
             className="grow"

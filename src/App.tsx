@@ -5,37 +5,38 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ProjectList from "./components/ProjectList/ProjectList";
 
-const Home: React.FC = () => {
-  return (
-    <main className="home">
-      <About />
-      <ProjectList />
-      <Contact />
-      <Footer />
-    </main>
-  )
-}
+const Home: React.FC = () => (
+  <>
+    <About />
+    <ProjectList />
+    <Contact />
+    <Footer />
+  </>
+);
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/bid-euchre-tracker" exact component={BidEuchreTracker}>
-          
-        </Route>
-        {/* <Route path="/tetros"></Route>
-        <Route path="/conjuring"></Route>
-      <Route path="/space"></Route> */}
-        <Route
-          path="/"
-          render={() => (
-            <div style={{ textAlign: "center" }}>
-              <h1>404</h1>
-            </div>
-          )}
-        />
-      </Switch>
+      <main className="home">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route
+            path="/bid-euchre-tracker"
+            component={BidEuchreTracker}
+          />
+          {/* <Route path="/tetros"></Route>
+          <Route path="/conjuring"></Route>
+        <Route path="/space"></Route> */}
+          <Route
+            path="/"
+            render={() => (
+              <div style={{ textAlign: "center" }}>
+                <h1>404</h1>
+              </div>
+            )}
+          />
+        </Switch>
+      </main>
     </Router>
   );
 }
