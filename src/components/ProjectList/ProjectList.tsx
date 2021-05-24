@@ -12,9 +12,9 @@ export default function ProjectList() {
           <a
             className="grow"
             href="https://agitated-hoover-67ed9a.netlify.com"
-            title="It's Tetris."
+            title="It's a Tetris Clone."
           >
-            <h4>Tetris</h4>
+            <h4>Tetris Clone</h4>
           </a>
         </li>
         <li className="conjuring">

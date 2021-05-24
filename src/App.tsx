@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ProjectList from "./components/ProjectList/ProjectList";
+import Socials from "./components/Socials/Socials";
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
             <div className="home">
               <About />
               <ProjectList />
-              <Contact />
+              <Socials />
               <Footer />
             </div>
           </Route>

@@ -1,4 +1,4 @@
-.contact {
+.socials {
   display: grid;
   grid-template-areas: "linkedin github email";
   gap: 15px;

@@ -1,9 +1,9 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import "./Contact.css";
+import "./Socials.css";
 
-export default function Contact() {
+export default function Socials() {
   return (
-    <section id="contact" className="contact">
+    <section id="socials" className="socials">
       <a
         className="icon email grow"
         href="mailto:elliottohj44@gmail.com"
