@@ -34,14 +34,14 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 .project-list a:hover {
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3),
-    0 0 25px 0 inset rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3), 0 0 25px 0 inset rgba(0, 0, 0, 0.25);
 }
 
-.project-list li.conjuring a:hover, .project-list li.conjuring a:focus{
+.project-list li.conjuring a:hover,
+.project-list li.conjuring a:focus {
   border-color: orangered;
-  border-right-width:3px;
-  border-left-width:3px;
+  border-right-width: 3px;
+  border-left-width: 3px;
 }
 
 /* @media (max-width: 1000px) { */

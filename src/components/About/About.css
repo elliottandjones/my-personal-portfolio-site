@@ -1,20 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Montserrat&display=swap');
 
 #about {
-  font-size:16px;
+  font-size: 16px;
   box-sizing: border-box;
   text-align: center;
   color: var(--lightslate);
 }
 
 .greeting {
-  font-family: "Ubuntu Mono", sans-serif;
+  font-family: 'Ubuntu Mono', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   padding-top: 12vh;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   display: grid;
-  grid-template-areas: "greeting1 greeting2";
+  grid-template-areas: 'greeting1 greeting2';
   justify-content: center;
 }
 span.greeting1 {
@@ -25,8 +25,8 @@ span.greeting1 {
     padding-top: 5vh;
     display: grid;
     grid-template-areas:
-      "greeting1"
-      "greeting2";
+      'greeting1'
+      'greeting2';
   }
   .description {
     padding-top: 0 !important;
@@ -34,7 +34,7 @@ span.greeting1 {
 }
 
 .description {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   padding-top: 10px;
   font-weight: 400;
@@ -48,6 +48,7 @@ span.greeting1 {
   text-decoration: none;
   color: var(--lightslate);
 }
-.description a:hover, .description a:focus {
+.description a:hover,
+.description a:focus {
   text-decoration: underline;
 }

@@ -1,4 +1,4 @@
-import "./About.css";
+import './About.css'
 
 export default function About() {
   return (
@@ -11,13 +11,13 @@ export default function About() {
         <p>I specialize in Javascript, Typescript, CSS, HTML, React, Vue, and Node.js.</p>
         <p>Currently seeking new career opportunities.</p>
         <p>
-          Inquiries at{" "}
+          Inquiries at{' '}
           <a title="Contact Email" href="mailto:elliottohj44@gmail.com">
             <span>elliottohj44@gmail.com</span>
           </a>
         </p>
         <p>
-          Check out some of my projects below or on{" "}
+          Check out some of my projects below or on{' '}
           <a title="my github profile" href="https://github.com/elliottandjones">
             <span>github</span>
           </a>
@@ -25,7 +25,7 @@ export default function About() {
         </p>
       </section>
     </div>
-  );
+  )
 }
 // <h1>Alternatively, you could go to <a title="the outer kind, you know?" href="#space"><span className="fancy">Space</span></a>.</h1>
 // <h1 className="greeting">

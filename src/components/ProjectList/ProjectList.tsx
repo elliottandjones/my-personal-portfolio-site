@@ -1,4 +1,4 @@
-import "./ProjectList.css";
+import './ProjectList.css'
 
 export default function ProjectList() {
   // const [expanded, setExpanded] = useState(false);
@@ -9,11 +9,7 @@ export default function ProjectList() {
     <div id="project-list" className="project-list">
       <ul id="projects-list">
         <li className="tetris">
-          <a
-            className="grow"
-            href="https://agitated-hoover-67ed9a.netlify.com"
-            title="It's a Tetris Clone."
-          >
+          <a className="grow" href="https://agitated-hoover-67ed9a.netlify.com" title="It's a Tetris Clone.">
             <h4>Tetris Clone</h4>
           </a>
         </li>
@@ -28,17 +24,13 @@ export default function ProjectList() {
           </a>
         </li>
         <li className="space">
-          <a
-            className="grow"
-            href="https://relaxed-bassi-0a0166.netlify.com"
-            title="Cruise around in space."
-          >
+          <a className="grow" href="https://relaxed-bassi-0a0166.netlify.com" title="Cruise around in space.">
             <h4>Go to Space</h4>
           </a>
         </li>
       </ul>
     </div>
-  );
+  )
 }
 //<button
 //aria - expanded={ expanded }
