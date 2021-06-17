@@ -20,8 +20,8 @@ body {
 } */
 .home {
   box-sizing: border-box;
-  font-family: 'Roboto', Tahoma, Geneva, Verdana, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-family: 'Roboto', Tahoma, Geneva, Verdana, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
@@ -52,7 +52,12 @@ body {
       rgba(93, 93, 93, 0.03) 38.3%,
       rgba(93, 93, 93, 0.03) 99%
     ),
-    linear-gradient(111deg, rgba(93, 93, 93, 0.05) 65%, rgba(208, 208, 208, 0.05) 65%, rgba(208, 208, 208, 0.05) 99%),
+    linear-gradient(
+      111deg,
+      rgba(93, 93, 93, 0.05) 65%,
+      rgba(208, 208, 208, 0.05) 65%,
+      rgba(208, 208, 208, 0.05) 99%
+    ),
     linear-gradient(
       23deg,
       rgba(3, 3, 3, 0.06) 0%,

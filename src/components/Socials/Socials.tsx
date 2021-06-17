@@ -7,7 +7,11 @@ export default function Socials() {
       <a className="icon email grow" href="mailto:elliottohj44@gmail.com" title="Email me!">
         <FaEnvelope />
       </a>
-      <a className="icon github grow" href="https://github.com/elliottandjones" title="Check out my github!">
+      <a
+        className="icon github grow"
+        href="https://github.com/elliottandjones"
+        title="Check out my github!"
+      >
         <FaGithub />
       </a>
       <a

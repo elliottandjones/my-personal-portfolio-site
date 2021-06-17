@@ -1,9 +1,9 @@
 node_modules
-haters
-theHaters
 .next
 yarn.lock
 package-lock.json
 public
 dist
 build
+haters
+theHaters

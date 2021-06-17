@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import About from './components/About/About'
-import ContactForm from './components/ContactForm/ContactForm'
+// import ContactForm from './components/ContactForm/ContactForm'
+import MyForm from './components/ContactForm/MyForm'
 import Footer from './components/Footer/Footer'
 import ProjectList from './components/ProjectList/ProjectList'
 import Socials from './components/Socials/Socials'
@@ -15,7 +16,8 @@ class App extends Component {
             <div className="home">
               <About />
               <ProjectList />
-              <ContactForm />
+              <MyForm />
+              {/* <ContactForm /> */}
               <Socials />
               <Footer />
             </div>
