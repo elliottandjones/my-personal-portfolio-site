@@ -52,14 +52,14 @@ function MyForm() {
     meta: { isSubmitting, isSubmitted, canSubmit, error },
   } = useForm({
     defaultValues,
-    validate: values => {
+    validate: (values) => {
       if (values.name === 'tanner' && values.age !== '29') {
         return "This is not tanner's correct age"
       }
       return false
     },
     onSubmit: async (values, instance) => {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       console.log(values)
     },
     debugForm: true,
@@ -69,7 +69,7 @@ function MyForm() {
     <Form>
       <div>
         <label>
-          Name: <InputField field="name" validate={value => (!value ? 'Required' : false)} />
+          Name: <InputField field="name" validate={(value) => (!value ? 'Required' : false)} />
         </label>
       </div>
       <div>
@@ -77,7 +77,7 @@ function MyForm() {
           Email:{' '}
           <InputField
             field="email"
-            validate={async value => {
+            validate={async (value) => {
               if (!value) {
                 return 'Email is required'
               }
@@ -89,7 +89,7 @@ function MyForm() {
               console.log(`Checking email: ${value}...`)
 
               // We're going to mock that for now
-              await new Promise(resolve => setTimeout(resolve, 2000))
+              await new Promise((resolve) => setTimeout(resolve, 2000))
 
               return value === 'tanner@gmail.com' ? 'Email is already being used' : false
             }}
@@ -109,7 +109,7 @@ function MyForm() {
 
               return debounce(async () => {
                 console.log('Checking username...')
-                await new Promise(resolve => setTimeout(resolve, 2000))
+                await new Promise((resolve) => setTimeout(resolve, 2000))
                 if (value === 'tanner') {
                   setMeta({ error: 'Username is unavailable', message: null })
                   return

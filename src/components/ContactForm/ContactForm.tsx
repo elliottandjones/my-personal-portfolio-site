@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './ContactForm.css'
 
-export default function ContactForm() {
+export type CustomEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+// type CustomEvent = React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>
+
+function ContactForm() {
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -10,50 +13,56 @@ export default function ContactForm() {
     buttonText: 'Submit',
     err: '',
   })
+  // update data in form fields
+  const onChange = (event: CustomEvent): void => {
+    const { name, value } = event.target
+    setData({
+      ...data,
+      [name]: value,
+    })
+    console.table(data)
+  }
+  // submit the form
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+    setData({
+      ...data,
+      sent: true,
+    })
+    console.info('form submitted')
+  }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setData({
-      ...data,
-      [name]: value,
-    })
-  }
-  const handleBodyChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setData({
-      ...data,
-      [name]: value,
-    })
-  }
+  // TODO make a POST request the form data to server
+  //const submitFormData = () => {}
+
+  // TODO
+  //const clearFormFields = () => {}
+
   return (
     <>
       <section className="contact" id="contact">
-        <form className="contact-form" onSubmit={e => e.preventDefault()}>
+        <form className="contact-form" onSubmit={onSubmit}>
           <div>
             <label htmlFor="full-name">Full Name</label>
-            <input id="full-name" name="full-name" type="text" onChange={handleChange} />
+            <input id="full-name" name="name" type="text" onChange={onChange} />
           </div>
           <div>
             <label htmlFor="email-address">Email Address</label>
-            <input id="email-address" name="email-address" type="email" onChange={handleChange} />
+            <input id="email-address" name="email" type="email" onChange={onChange} />
           </div>
           <div>
-            <label htmlFor="email-address">Subject</label>
-            <input id="email-subject" name="email-subject" type="text" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="email-body">Email Body</label>
+            <label htmlFor="email-message">Email Message</label>
             <textarea
-              name="email-body"
-              id="email-body"
+              name="message"
+              id="email-message"
               cols={30}
               rows={10}
-              onChange={handleBodyChange}
+              onChange={onChange}
             ></textarea>
           </div>
           <div className="captcha-element">Captcha Element</div>
           <div className="btn">
-            <input type="submit" value="" />
+            <input type="submit" />
           </div>
         </form>
       </section>
@@ -65,3 +74,17 @@ export default function ContactForm() {
     </>
   )
 }
+
+export default ContactForm
+// const onBodyChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+//   const { name, value } = e.target
+//   setData({
+//     ...data,
+//     [name]: value,
+//   })
+// }
+
+/* <div>
+    <label htmlFor="email-subject">Subject</label>
+    <input id="email-subject" name="subject" type="text" onChange={onChange} />
+  </div> */
