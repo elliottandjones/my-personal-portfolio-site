@@ -1,8 +1,8 @@
-import React from 'react'
+import { forwardRef, useMemo } from 'react'
 import { splitFormProps, useField, useForm } from 'react-form'
 import './ContactForm.css'
 
-const InputField = React.forwardRef((props, ref) => {
+const InputField = forwardRef((props, ref) => {
   // Let's use splitFormProps to get form-specific props
   const [field, fieldOptions, rest] = splitFormProps(props)
 
@@ -13,7 +13,6 @@ const InputField = React.forwardRef((props, ref) => {
     getInputProps,
   } = useField(field, fieldOptions)
 
-
   // Build the field
   return (
     <>
@@ -23,26 +22,26 @@ const InputField = React.forwardRef((props, ref) => {
         Let's inline some validation and error information
         for our field
       */}
-
-      {isValidating ? (
-        <em>Validating...</em>
-      ) : isTouched && error ? (
-        <strong>{error}</strong>
-      ) : message ? (
-        <small>{message}</small>
-      ) : null}
+      <div className="validation-message">
+        {isValidating ? (
+          <em>Validating...</em>
+        ) : isTouched && error ? (
+          <strong>{error}</strong>
+        ) : message ? (
+          <small>{message}</small>
+        ) : null}
+      </div>
     </>
   )
 })
 
 function MyForm() {
-  const defaultValues = React.useMemo(
+  const defaultValues = useMemo(
     () => ({
       name: '',
       email: '',
-      phone: '',
+      subject: '',
       message: '',
-      sent: false,
     }),
     []
   )
@@ -55,9 +54,8 @@ function MyForm() {
   } = useForm({
     defaultValues,
     validate: (values) => {
-      if (values.name === 'Elliott Jones') {
-        return "No doppleganger spam!"
-      }
+      if (values.name === 'Elliott Jones') return 'No doppleganger spam!'
+      // if (!values.subject) return 'Subject is required'
       return false
     },
     onSubmit: async (values, instance) => {
@@ -71,51 +69,57 @@ function MyForm() {
     <section id="contact" className="contact">
       <Form className="contact-form">
         <div className="input-wrapper">
-          <label htmlFor="full-name">Full Name</label>
-          {/* @ts-ignore */}
-          <InputField id="full-name" field="name" validate={(value:string) => (!value ? 'Required' : false)} />
+          <label htmlFor="name">Name</label>
+          <InputField /* @ts-ignore */
+            id="name"
+            field="name"
+            validate={(value:string) => (!value ? 'Required' : false)}
+            placeHolder="Name" />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="email-address">Email</label>
-          {/* @ts-ignore */}
-          <InputField id="email-address" field="email" validate={async (value:string) => {
-            if (!value) {
-              return `\n\n Email is required`
-            }
-            
-            if (!validateEmail(value)) {
-              return 'Please enter a valid email addresss'
-            }
-            console.log(`Checking email: ${value}...`)
-            
-            // We're going to mock that for now
-            await new Promise((resolve) => setTimeout(resolve, 2000))
-            
-            return value === 'elliottohj44@gmail.com' ? 'Email is already being used' : false
-          }}
-          />
+          <label htmlFor="email">Email</label>
+          <InputField /* @ts-ignore */
+            id="email"
+            field="email"
+            validate={async (value:string) => {
+              if (!value) return 'Email is required'
+              if (!validateEmail(value)) return 'Please enter a valid email addresss'
+              console.log(`Checking email: ${value}...`)
+              // We're going to mock that for now
+              await new Promise((resolve) => setTimeout(resolve, 2000))
+              
+              return value === 'elliottohj44@gmail.com' ? 'Email is already being used' : false
+            }}
+            placeHolder="Email" />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="subject">Subject</label>
+          <InputField /* @ts-ignore */
+            id="subject"
+            field="subject" 
+            validate={(value:string) => (!value ? 'Required' : false)} 
+            placeHolder="Subject" />
         </div>
         <div className="input-wrapper">
           <label htmlFor="email-message">Message</label>
-          <br/>
-          {/* @ts-ignore */}
-          <InputField id="email-message" field="message" defaultValue="Type your message here 😄" />
+          <InputField /* @ts-ignore */ 
+            id="email-message"
+            field="message"
+            placeHolder="Message" />
         </div>
-
-        {isSubmitted ? <em>Thanks for submitting!</em> : null}
-
-        {error ? <strong>{error}</strong> : null}
-
+        {isSubmitted && <em>Thanks for submitting!</em>}
+        {error && <strong>{error}</strong>}
         {isSubmitting ? (
           'Submitting...'
           ) : (
-            <div className="input-wrapper">
+          <div className="input-wrapper">
             <button className="submit-btn grow" type="submit" disabled={!canSubmit}>
               Submit
             </button>
           </div>
         )}
       </Form>
+      {/* <pre>{JSON.stringify(values, undefined, 2)}</pre> */}
     </section>
   )
 }
