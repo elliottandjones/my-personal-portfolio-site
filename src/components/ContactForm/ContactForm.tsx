@@ -1,18 +1,53 @@
 import { useState } from 'react'
+// import { splitFormProps, useField, useForm } from 'react-form'
 import './ContactForm.css'
 
 export type CustomEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 // type CustomEvent = React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>
 
+// const InputField = forwardRef((props, ref) => {
+//   // Let's use splitFormProps to get form-specific props
+//   const [field, fieldOptions, rest] = splitFormProps(props)
+
+//   // Use the useField hook with a field and field options
+//   // to access field state
+//   const {
+//     meta: { error, isTouched, isValidating, message },
+//     getInputProps,
+//   } = useField(field, fieldOptions)
+
+//   // Build the field
+//   return (
+//     <>
+//       <input {...getInputProps({ ref, ...rest })} />
+
+//       {/*
+//         Let's inline some validation and error information
+//         for our field
+//       */}
+
+//       {isValidating ? (
+//         <em>Validating...</em>
+//       ) : isTouched && error ? (
+//         <strong>{error}</strong>
+//       ) : message ? (
+//         <small>{message}</small>
+//       ) : null}
+//     </>
+//   )
+// })
+
+const initialState = {
+  name: '',
+  email: '',
+  message: '',
+  sent: false,
+  buttonText: 'Submit',
+  err: '',
+}
+
 function ContactForm() {
-  const [data, setData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    sent: false,
-    buttonText: 'Submit',
-    err: '',
-  })
+  const [data, setData] = useState(initialState)
   // update data in form fields
   const onChange = (event: CustomEvent): void => {
     const { name, value } = event.target
@@ -20,7 +55,6 @@ function ContactForm() {
       ...data,
       [name]: value,
     })
-    console.table(data)
   }
   // submit the form
   const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -31,26 +65,28 @@ function ContactForm() {
     })
     console.info('form submitted')
   }
+  
 
   // TODO make a POST request the form data to server
   //const submitFormData = () => {}
 
-  // TODO
-  //const clearFormFields = () => {}
+  // const clearFormFields = (): void => {
+  //   setData(initialState)
+  // }
 
   return (
     <>
       <section className="contact" id="contact">
         <form className="contact-form" onSubmit={onSubmit}>
-          <div>
+          <div className="input-wrapper">
             <label htmlFor="full-name">Full Name</label>
-            <input id="full-name" name="name" type="text" onChange={onChange} />
+            <input autoComplete="false" id="full-name" name="name" type="text" onChange={onChange} />
           </div>
-          <div>
+          <div className="input-wrapper">
             <label htmlFor="email-address">Email Address</label>
             <input id="email-address" name="email" type="email" onChange={onChange} />
           </div>
-          <div>
+          <div className="input-wrapper">
             <label htmlFor="email-message">Email Message</label>
             <textarea
               name="message"
@@ -60,20 +96,28 @@ function ContactForm() {
               onChange={onChange}
             ></textarea>
           </div>
-          <div className="captcha-element">Captcha Element</div>
-          <div className="btn">
-            <input type="submit" />
+          <div className="input-wrapper">
+            <div className="captcha-element">Captcha Element</div>
+          </div>
+          <div className="input-wrapper">
+            <input className="btn" type="submit" />
           </div>
         </form>
       </section>
       <section>
-        <code>
-          <pre>{data}</pre>
-        </code>
+        <pre>
+          {JSON.stringify(data, undefined, 2)}
+        </pre>
       </section>
     </>
   )
 }
+
+// function validateEmail(email: any): boolean {
+//   let reggie =
+//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//   return reggie.test(String(email).toLowerCase())
+// }
 
 export default ContactForm
 // const onBodyChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -83,8 +127,3 @@ export default ContactForm
 //     [name]: value,
 //   })
 // }
-
-/* <div>
-    <label htmlFor="email-subject">Subject</label>
-    <input id="email-subject" name="subject" type="text" onChange={onChange} />
-  </div> */
