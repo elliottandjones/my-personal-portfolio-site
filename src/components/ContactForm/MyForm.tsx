@@ -96,24 +96,6 @@ function MyForm() {
           />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="phone-number">Phone</label>
-          {/* @ts-ignore */}
-          <InputField id="phone-number" field="phone" validate={async (value: any) => {
-            console.log('checkphonenumber')
-            // if (!value) {
-              // return 'Phone Number is required'
-              // }
-              if (!validatePhoneNumber(value)) {
-                return '\nPlease enter a valid number'
-              }
-              console.log(`checking number: ${value}...`)
-              // We're going to mock that for now
-              await new Promise((resolve) => setTimeout(resolve, 2000))
-              return false
-            }}
-            />
-        </div>
-        <div className="input-wrapper">
           <label htmlFor="email-message">Message</label>
           <br/>
           {/* @ts-ignore */}
@@ -133,9 +115,6 @@ function MyForm() {
             </button>
           </div>
         )}
-        {/* <pre>
-          {JSON.stringify(values, undefined, 2)}
-        </pre> */}
       </Form>
     </section>
   )
@@ -145,11 +124,6 @@ function validateEmail(email:any) {
   var reggie =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return reggie.test(String(email).toLowerCase())
-}
-function validatePhoneNumber(phoneNumber:any) {
-  var reggie =
-  /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})/
-  return reggie.test(String(phoneNumber).toLowerCase())
 }
 
 export default MyForm
