@@ -1,6 +1,6 @@
 .socials {
   display: grid;
-  grid-template-areas: 'linkedin github email';
+  grid-template-areas: 'email github linkedin';
   gap: 15px;
   text-align: center;
   justify-content: space-evenly;
@@ -29,8 +29,8 @@ a.icon {
 a.icon.email {
   grid-area: email;
   font-size: 48px;
-  /* color: var(--themeinverse); */
   color: rgba(0, 0, 70, 0.795);
+  /* color: var(--themeinverse); */
 }
 
 .linkedin {

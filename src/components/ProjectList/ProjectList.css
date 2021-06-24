@@ -30,7 +30,7 @@
   color: var(--lightslate);
   text-transform: capitalize;
   /* font-size: 20px; */
-  border-radius: 3%;
+  border-radius: 5px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 .project-list a:hover {
@@ -40,8 +40,6 @@
 .project-list li.conjuring a:hover,
 .project-list li.conjuring a:focus {
   border-color: orangered;
-  border-right-width: 3px;
-  border-left-width: 3px;
 }
 
 /* @media (max-width: 1000px) { */
