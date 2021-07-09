@@ -1,13 +1,11 @@
-import { forwardRef, useMemo } from 'react'
+import React from 'react'
 import { splitFormProps, useField, useForm } from 'react-form'
 import './ContactForm.css'
 
-const InputField = forwardRef((props, ref) => {
+const InputField = React.forwardRef((props, ref) => {
   // Let's use splitFormProps to get form-specific props
   const [field, fieldOptions, rest] = splitFormProps(props)
-
-  // Use the useField hook with a field and field options
-  // to access field state
+  // Use the useField hook with a field and field options to access field state
   const {
     meta: { error, isTouched, isValidating, message },
     getInputProps,
@@ -17,11 +15,7 @@ const InputField = forwardRef((props, ref) => {
   return (
     <>
       <input {...getInputProps({ ref, ...rest})} />
-
-      {/*
-        Let's inline some validation and error information
-        for our field
-      */}
+      {/* some inline validation and error information for the field */}
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
@@ -33,8 +27,34 @@ const InputField = forwardRef((props, ref) => {
   )
 })
 
+const TextAreaField = React.forwardRef((props, ref) => {
+  // Let's use splitFormProps to get form-specific props
+  const [field, fieldOptions, rest] = splitFormProps(props)
+  // Use the useField hook with a field and field options to access field state
+  const {
+    meta: { error, isTouched, isValidating, message },
+    getInputProps,
+  } = useField(field, fieldOptions)
+
+  // Build the field
+  return (
+    <>
+      <textarea {...getInputProps({ ref, ...rest})} />
+      {/* some inline validation and error information for the field */}
+      {isValidating ? (
+        <em>Validating...</em>
+      ) : isTouched && error ? (
+        <strong>{error}</strong>
+      ) : message ? (
+        <small>{message}</small>
+      ) : null}
+    </>
+  )
+})
+
+
 function MyForm() {
-  const defaultValues = useMemo(
+  const defaultValues = React.useMemo(
     () => ({
       name: '',
       email: '',
@@ -46,8 +66,6 @@ function MyForm() {
   const {
     Form,
     values,
-    // pushFieldValue,
-    // removeFieldValue,
     // handleSubmit,
     meta: { isSubmitting, isSubmitted, canSubmit, error },
   } = useForm({
@@ -61,69 +79,73 @@ function MyForm() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
       console.log(values)
     },
-    // debugForm: true,
+    debugForm: true,
   })
 
   return (
     <section id="contact" className="contact">
-      <Form 
-        className="contact-form" 
-        // onSubmit={(e:React.SyntheticEvent<unknown, Event>)=>e.preventDefault()} 
-      // handleSubmit={(e:React.SyntheticEvent<unknown, Event>) => e.preventDefault()}
-      >
+      <Form className="contact-form">
         <div className="input-wrapper">
-          <label htmlFor="name">Name</label>
-          <InputField /* @ts-ignore */
-            id="name"
-            field="name"
-            placeholder="Full Name" 
-            validate={(value:string) => (!value ? ' Required' : false)}
-            />
+          <label>
+            Name
+            <InputField /* @ts-ignore */
+              field="name"
+              validate={(value:string) => (!value ? ' Required' : false)}
+              />
+          </label>
         </div>
         <div className="input-wrapper">
-          <label htmlFor="email">Email</label>
-          <InputField /* @ts-ignore */
-            id="email"
-            field="email"
-            placeholder="Email" 
-            validate={async (value:string) => {
-              if (!value) return ' Required'
-              if (!validateEmail(value)) return ' Please enter a valid email addresss'
-              console.log(`Checking email: ${value}...`)
-              // We're going to mock that for now
-              await new Promise((resolve) => setTimeout(resolve, 2000))
-              return false
-            }}
-            />
+          <label>
+            Email
+            <InputField /* @ts-ignore */
+              field="email"
+              validate={async (value:string) => {
+                if (!value) return ' Required'
+                if (!validateEmail(value)) return ' Please enter a valid email addresss'
+                console.log(`Checking email: ${value}...`)
+                // mocking that for now
+                await new Promise((resolve) => setTimeout(resolve, 2000))
+                return false
+              }}
+              />
+            </label>
         </div>
         <div className="input-wrapper">
-          <label htmlFor="subject">Subject</label>
-          <InputField /* @ts-ignore */
-            id="subject"
-            field="subject" 
-            placeholder="Subject"
-            validate={(value:string) => (!value ? ' Required' : false)}
-            />
+          <label>
+            Subject
+            <InputField /* @ts-ignore */
+              field="subject"
+              validate={(value:string) => (!value ? ' Required' : false)}
+              />
+          </label>
         </div>
         <div className="input-wrapper">
-          <label htmlFor="email-message">Message</label>
-          <InputField /* @ts-ignore */ 
-            id="email-message"
-            field="message"
-            placeholder="Message"
-            validate={(value:string) => (!value ? ' Required' : false)}
-            />
+          {/* <label>
+            Message */}
+            <TextAreaField /* @ts-ignore */
+              field="message"
+              placeholder="Message"
+              validate={(value:string) => (!value ? ' Required' : false)}
+              />
+          {/* </label> */}
         </div>
-        {isSubmitted && <em>Thanks for submitting!</em>}
+        {/* <div className="captcha-wrapper">
+          <label htmlFor="captcha">I use this field to detect spam bots.</label>
+          <InputField 
+            id="captcha"
+            field="captcha"
+            placeHolder="I use this field to detect spam bots. "/>
+        </div> */}
+        {isSubmitted && <em>Thanks for reaching out, {values.name}</em>}
         {error && <strong>{error}</strong>}
         {isSubmitting && 'Submitting...'}
         <div className="input-wrapper">
-          <button className="submit-btn grow" type="submit" disabled={!!isSubmitting || !canSubmit}>Send</button>
+          <button className={`submit-btn ${!!canSubmit && "grow"}`} type="submit" disabled={!canSubmit}>Send</button>
         </div>
       </Form>
-      <code>
+      {/* <code>
         <pre>{JSON.stringify(values, undefined, 2)}</pre>
-      </code>
+      </code> */}
     </section>
   )
 }
