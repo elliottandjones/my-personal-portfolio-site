@@ -11,7 +11,7 @@
   text-align: center;
   /* display: flex; */
   padding: 0.5rem;
-  margin:auto;
+  margin: auto;
 }
 /* .captcha-wrapper {
   position: absolute !important;
@@ -26,13 +26,13 @@ label {
   display: block;
   font-size: 1rem;
   text-align: left;
-  color : var(--lightslate);
+  color: var(--lightslate);
   margin-bottom: 5px;
 }
 input,
 textarea {
   justify-content: center;
-  /* border: solid 2px rgba(99, 156, 156, 0.438); */
+  border: solid 2px rgba(99, 156, 156, 0.438);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background: transparent;
@@ -42,16 +42,16 @@ textarea {
   transition: transform 0.25s ease-out;
   /* outline-offset: 5px; */
 }
-textarea::placeholder{
-  color:rgb(0, 0, 0);
+textarea::placeholder {
+  color: rgb(0, 0, 0);
 }
 textarea {
   width: 300px;
   height: 150px;
 }
-.submit-btn:disabled{
-  border-color:rgba(99, 156, 156, 0.438);
-  opacity:0.8;
+.submit-btn:disabled {
+  border-color: rgba(99, 156, 156, 0.438);
+  opacity: 0.8;
 }
 .submit-btn {
   border: solid 2px orangered;
@@ -79,5 +79,5 @@ input:active {
 pre {
   overflow-y: scroll;
   overflow-x: auto;
-  color:var(--lightslate);
+  color: var(--lightslate);
 }

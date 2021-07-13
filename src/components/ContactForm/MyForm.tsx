@@ -10,11 +10,10 @@ const InputField = React.forwardRef((props, ref) => {
     meta: { error, isTouched, isValidating, message },
     getInputProps,
   } = useField(field, fieldOptions)
-
   // Build the field
   return (
     <>
-      <input {...getInputProps({ ref, ...rest})} />
+      <input {...getInputProps({ ref, ...rest })} />
       {/* some inline validation and error information for the field */}
       {isValidating ? (
         <em>Validating...</em>
@@ -35,11 +34,10 @@ const TextAreaField = React.forwardRef((props, ref) => {
     meta: { error, isTouched, isValidating, message },
     getInputProps,
   } = useField(field, fieldOptions)
-
   // Build the field
   return (
     <>
-      <textarea {...getInputProps({ ref, ...rest})} />
+      <textarea {...getInputProps({ ref, ...rest })} />
       {/* some inline validation and error information for the field */}
       {isValidating ? (
         <em>Validating...</em>
@@ -51,7 +49,6 @@ const TextAreaField = React.forwardRef((props, ref) => {
     </>
   )
 })
-
 
 function MyForm() {
   const defaultValues = React.useMemo(
@@ -90,8 +87,8 @@ function MyForm() {
             Name
             <InputField /* @ts-ignore */
               field="name"
-              validate={(value:string) => (!value ? ' Required' : false)}
-              />
+              validate={(value: string) => (!value ? ' Required' : false)}
+            />
           </label>
         </div>
         <div className="input-wrapper">
@@ -99,7 +96,7 @@ function MyForm() {
             Email
             <InputField /* @ts-ignore */
               field="email"
-              validate={async (value:string) => {
+              validate={async (value: string) => {
                 if (!value) return ' Required'
                 if (!validateEmail(value)) return ' Please enter a valid email addresss'
                 console.log(`Checking email: ${value}...`)
@@ -107,26 +104,26 @@ function MyForm() {
                 await new Promise((resolve) => setTimeout(resolve, 2000))
                 return false
               }}
-              />
-            </label>
+            />
+          </label>
         </div>
         <div className="input-wrapper">
           <label>
             Subject
             <InputField /* @ts-ignore */
               field="subject"
-              validate={(value:string) => (!value ? ' Required' : false)}
-              />
+              validate={(value: string) => (!value ? ' Required' : false)}
+            />
           </label>
         </div>
         <div className="input-wrapper">
           {/* <label>
             Message */}
-            <TextAreaField /* @ts-ignore */
-              field="message"
-              placeholder="Message"
-              validate={(value:string) => (!value ? ' Required' : false)}
-              />
+          <TextAreaField /* @ts-ignore */
+            field="message"
+            placeholder="Message"
+            validate={(value: string) => (!value ? ' Required' : false)}
+          />
           {/* </label> */}
         </div>
         {/* <div className="captcha-wrapper">
@@ -140,7 +137,13 @@ function MyForm() {
         {error && <strong>{error}</strong>}
         {isSubmitting && 'Submitting...'}
         <div className="input-wrapper">
-          <button className={`submit-btn ${!!canSubmit && "grow"}`} type="submit" disabled={!canSubmit}>Send</button>
+          <button
+            className={`submit-btn ${!!canSubmit && 'grow'}`}
+            type="submit"
+            disabled={!canSubmit}
+          >
+            Send
+          </button>
         </div>
       </Form>
       {/* <code>
@@ -150,7 +153,7 @@ function MyForm() {
   )
 }
 
-function validateEmail(email:any) {
+function validateEmail(email: any) {
   var reggie =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return reggie.test(String(email).toLowerCase())

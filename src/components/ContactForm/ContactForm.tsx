@@ -65,7 +65,6 @@ function ContactForm() {
     })
     console.info('form submitted')
   }
-  
 
   // TODO make a POST request the form data to server
   //const submitFormData = () => {}
@@ -80,7 +79,13 @@ function ContactForm() {
         <form className="contact-form" onSubmit={onSubmit}>
           <div className="input-wrapper">
             <label htmlFor="full-name">Full Name</label>
-            <input autoComplete="false" id="full-name" name="name" type="text" onChange={onChange} />
+            <input
+              autoComplete="false"
+              id="full-name"
+              name="name"
+              type="text"
+              onChange={onChange}
+            />
           </div>
           <div className="input-wrapper">
             <label htmlFor="email-address">Email Address</label>
@@ -105,9 +110,7 @@ function ContactForm() {
         </form>
       </section>
       <section>
-        <pre>
-          {JSON.stringify(data, undefined, 2)}
-        </pre>
+        <pre>{JSON.stringify(data, undefined, 2)}</pre>
       </section>
     </>
   )
