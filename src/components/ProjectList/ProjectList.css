@@ -34,6 +34,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 .project-list a:hover {
+  text-decoration: underline;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3), 0 0 25px 0 inset rgba(0, 0, 0, 0.25);
 }
 

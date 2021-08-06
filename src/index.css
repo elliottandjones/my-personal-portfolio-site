@@ -8,7 +8,8 @@
   --themelight: #1cb5e0;
   --thememediumdark: #0d1870;
   --thememediumlight: #2172bd;
-  --themeinverse: #e0571c;
+  --themeinverse: rgb(255, 77, 0);
+  --themeborder: rgba(99, 156, 156, 0.438);
 }
 body {
   margin: 0;

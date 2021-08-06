@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import About from './components/About/About'
-// import ContactForm from './components/ContactForm/ContactForm'
-import MyForm from './components/ContactForm/MyForm'
+import ContactForm from './components/ContactForm/ContactForm'
 import Footer from './components/Footer/Footer'
 import ProjectList from './components/ProjectList/ProjectList'
 import Socials from './components/Socials/Socials'
@@ -14,8 +13,7 @@ function App() {
           <div className="home">
             <About />
             <ProjectList />
-            <MyForm />
-            {/* <ContactForm /> */}
+            <ContactForm />
             <Socials />
             <Footer />
           </div>

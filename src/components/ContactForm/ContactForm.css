@@ -1,3 +1,51 @@
+/* <article class="centered">
+    <section class="section">This goes in the center</section>
+    <section class="info">This goes on the  right</section>
+</article> */
+.contact-form {
+  vertical-align: center;
+  padding: 2rem;
+}
+.contact-form article.centered {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* display: inline-block; */
+}
+.contact-form article.centered section.section {
+  position: absolute;
+  background: lightgreen;
+  border: solid 1px #333;
+  z-index: 11;
+  width: 400px;
+  margin: auto;
+  padding: 1rem 0;
+  height: 1rem;
+}
+
+.contact-form section.info {
+  height: 1rem;
+  text-align: center;
+  display: inline-block;
+  z-index: 19;
+  left: 0;
+  padding: 2rem 0;
+  margin: auto;
+  position: relative;
+  border: solid 1px #333;
+  width: 200px;
+  background: #EEE;
+  
+  /* text-align: left; */
+}
+
+section.section:hover ~ section.info {
+  /* display: inline; */
+  left: calc(300px + 1rem);
+}
+
 .contact-form {
   text-align: center;
   margin: auto;
@@ -17,7 +65,8 @@
   position: absolute !important;
   left: -999em !important;
 } */
-input ~ * {
+input ~ *,
+textarea ~ * {
   display: inline;
   color: var(--lightslate);
   font-size: 0.9rem;
@@ -32,7 +81,8 @@ label {
 input,
 textarea {
   justify-content: center;
-  border: solid 2px rgba(99, 156, 156, 0.438);
+  border: solid 2px var(--themeborder);
+  /* border: solid 2px rgba(99, 156, 156, 0.438); */
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background: transparent;
@@ -43,7 +93,7 @@ textarea {
   /* outline-offset: 5px; */
 }
 textarea::placeholder {
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.7);
 }
 textarea {
   width: 300px;
@@ -54,7 +104,7 @@ textarea {
   opacity: 0.8;
 }
 .submit-btn {
-  border: solid 2px orangered;
+  border: solid 2px rgb(255, 47, 0);
   background: transparent;
   display: block;
   text-decoration: none;
@@ -69,7 +119,10 @@ textarea {
 .submit-btn.grow:hover,
 input:hover,
 input:focus,
-input:active {
+input:active,
+textarea:hover,
+textarea:focus,
+textarea:active {
   -webkit-transform: scale(1.03);
   -ms-transform: scale(1.03);
   transform: scale(1.03);
